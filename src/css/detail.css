@@ -1,0 +1,240 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 0.9rem;
+	background: #f7f7f7;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+	color: #666;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+
+
+.message img {
+	width: 25%;
+}
+header .sys img {
+	width: 35%;
+	height: auto;
+}
+
+.banner { 
+	height: 6.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 0.02rem solid #ddd;
+	}
+.banner img {
+	height: 88%;
+	width: auto;
+}
+
+main > div {
+	border-bottom: 0.02rem solid #ddd;
+}
+
+.title {
+	 padding: 0.22rem 1.2rem 0.22rem 0.22rem;
+	
+}
+
+.title em {
+	display: inline-block;
+	padding-top: 0.1rem;
+	font-style: normal;
+	color: #f33;
+	font-size: 0.38rem;
+	line-height: 0.4rem;
+}
+
+.title s {
+	color: #999;
+	font-size: 0.3rem;
+}
+.title span {
+	border: 0.02rem solid #f33;
+	color: #f33;
+	font-size: 0.26rem;
+	padding: 0 2px;
+	margin-left: 0.1rem;
+}
+
+.sale {
+	display: flex;
+	height: 0.86rem;
+	align-items: center;
+	color: #666;
+}
+
+.sale span {
+	border: 0.02rem solid #f33;
+	color: #f33;
+	font-size: 0.26rem;
+	padding: 0 2px;
+	margin:0 0.22rem;
+}
+
+.checked {
+	display: flex;
+	height: 0.86rem;
+	align-items: center;	
+}
+
+.s_title {
+	margin:0 0.22rem;
+	color: #666;
+}
+
+.count {
+	display: flex;
+	height: 0.86rem;
+	align-items: center;
+	
+}
+
+.count > div { display: flex;
+width: 1.6rem;
+margin-right: 0.2rem;	}
+.count > div button { width: 33.3333%;}
+.count > div input { width: 33.3333%; 
+text-align: center;}
+
+.msg {
+	border-top: 0.25rem solid #f4f4f4;
+	border-bottom: 1.6rem solid #f4f4f4;
+}
+
+.msg h2 {
+	border-top: 0.02rem solid #ddd;
+	border-bottom: 0.02rem solid #ddd;
+	height: 0.78rem;
+	display: flex;
+	align-items: center;
+	font-weight: normal;
+	font-size: 0.32rem;
+	padding-left: 0.22rem;
+}
+
+.msg h2 span {
+	color: #888;
+}
+
+.msg_user{
+	display: flex;
+	justify-content: space-between;
+	padding: 0.22rem;
+}
+
+.msg_user>div:nth-child(1) {
+	width: 2.2rem;
+	background: url(../images/detail/detail_vip.jpg) no-repeat right center;
+	background-size:contain;
+	line-height: 0.3rem;
+}
+
+.msg_user>div:nth-child(2) em{
+	border: 0.02rem solid #f33;
+	border-radius: 5px;
+	color: #f33;
+	font-style: normal;
+	font-size: 0.26rem;
+	padding:2px 4px;
+	vertical-align: top;
+}
+.msg_user>div:nth-child(2) span{
+	color: #666;
+	padding:2px 4px;
+}
+
+.msg_content p {
+	padding: 0.3rem;
+	padding-top: 0;
+	line-height: 0.42rem;
+}
+.msg_pic ul {
+	display: flex;
+	padding-left: 0.3rem;
+	list-style: none;
+}
+.msg_pic li {
+	margin-right: 0.2rem;
+}
+.msg_pic img {
+	width: 1.5rem;
+	height: auto;
+}
+
+.msg_content > div{
+	border: 0.02rem solid #ddd;
+	padding-bottom: 0.2rem;
+}
+
+.more {
+	height: 0.86rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #666;
+	border-bottom: 0.02rem solid #ddd;
+}
+
+footer {
+	display: flex;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+	border-top: 0.02rem solid #ddd;
+	width: 100%;
+	height: 1.28rem;
+	
+}
+.collect {
+	flex: 1;
+	text-align: center;
+	background: url(../images/detail/detail_start.jpg) no-repeat center 0.1rem;
+	background-size: 36%;
+	padding-top: 0.78rem;
+	font-size: 0.26rem;
+	color: #555;
+}
+.btn {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	align-items:center ;
+}
+.btn button {
+	background: #f33;
+	border: none;
+	width: 100%;
+	height:80%;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.buy {
+	flex: 1;
+	text-align: center;
+	background: url(../images/detail/detail_shoping.jpg) no-repeat center 0.1rem;
+	background-size: 36%;
+	padding-top: 0.78rem;
+	font-size: 0.26rem;
+	color: #555;
+}

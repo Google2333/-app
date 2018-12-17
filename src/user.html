@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/user.css"/>
+	</head>
+	<body>
+		<div id="box">
+		<header>
+			<div class="message" onclick="history.back()"><img src="./images/pic_list/pic_list_back.jpg"/></div>
+			<div class="search">
+				我的逸购
+			</div>
+			<div class="sys" @click="logout()">退出</div>
+		</header>
+		
+		<div v-if="isShow">
+			<p>请先登录，然后再查看个人中心</p>
+			<button @click="login()">登录</button>
+		</div>
+		<div v-else>
+			<div class="user">
+			<div class="user_info">
+				<div class="user_photo">
+					<img src="user/user_photo.jpg"/>
+				</div>
+				<div class="user_name">
+					<b>{{name}}</b>
+					<span>v4会员</span>
+				</div>
+				<div class="user_update">
+					资料修改>
+				</div>
+			</div>
+			<div class="user_data">
+				<div>
+					余额：￥<span>1000.00</span>
+				</div>
+				<div>
+					优惠券：<span>124</span>
+				</div>
+				<div>
+					积分：<span>2257</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="user_ctrl">
+			<div>
+				<div><img src="user/user_ctrl1.jpg"/></div>
+				<p>待付款</p>
+			</div>
+			<div>
+				<div><img src="user/user_ctrl2.jpg"/></div>
+				<p>待收货</p>
+			</div>
+			<div>
+				<div><img src="user/user_ctrl3.jpg"/></div>
+				<p>待评价</p>
+			</div>
+			<div>
+				<div><img src="user/user_ctrl4.jpg"/></div>
+				<p>退货/换货</p>
+			</div>
+		</div>
+		
+		<div class="user_other">
+			<a href="#">全部订单</a>
+			<a href="#">浏览记录</a>
+			<a href="#">我的收藏</a>
+			<a href="#">会员积分</a>
+			<a href="#">安全中心</a>
+			<a href="#">帮助反馈</a>
+		</div>
+		</div>
+		
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					isShow:true,
+					name:""
+				},
+				created(){
+					if(sessionStorage.getItem("phone")){
+						this.isShow = false
+						this.name = sessionStorage.getItem("phone");
+					}
+				},
+				methods:{
+					login(){
+						localStorage.setItem("loginJump","user.html")
+						location = "denglu.html";
+					},
+					logout(){
+						this.isShow = true;
+						sessionStorage.removeItem("phone")
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

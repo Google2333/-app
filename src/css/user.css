@@ -1,0 +1,112 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body {font-size: 0.32rem}
+ul { list-style: none;}
+header { height: 0.9rem; 
+	  background: #f7f7f7;
+      display: flex;
+}
+
+.message {
+	 width: 1rem;
+}
+.sys {
+	 width: 1rem;
+}
+.search {
+	flex: 1;
+	color: #555;
+}
+
+
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header > div img {
+	width: 38%;
+	height: auto;
+}
+
+header .sys img {
+	width: 65%;
+}
+
+.user {
+	 height: 3.37rem;
+	 background: url(../user/user_bg.jpg);
+	 background-size: contain ;
+}
+
+.user_info {
+	display: flex;
+	padding: 0.45rem 0.3rem 0rem 0.34rem;
+}
+
+.user_photo {
+ width: 1.6rem;
+}
+.user_photo img{
+ width: 100%;
+ height: auto;
+ border: 0.06rem solid #fff;
+ border-radius: 0.06rem;
+}
+
+.user_name {
+	flex: 1;
+	margin-left: 0.3rem;
+}	
+
+.user_name b {
+	 font-size: 0.4rem;
+	 line-height: 0.8rem;
+	 display: block;
+}	
+
+.user_update {
+ width: 1.6rem;
+ display: flex;
+ align-items: center;
+ text-align: right;
+
+}
+.user_data {
+	margin-top: 0.3rem;
+	background: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: space-around;
+	height: 0.95rem;
+	padding:0.26rem 0.2rem;
+	color: #fff;
+	 font-size: 0.3rem;
+}
+
+.user_data >div:nth-child(2) {
+	border-left: 0.02rem solid rgba(255,255,255,0.5);
+	border-right: 0.02rem solid rgba(255,255,255,0.5);
+	padding: 0 0.3rem;
+}
+
+.user_ctrl {
+	display: flex;
+}
+
+.user_ctrl > div {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.user_ctrl > div > div{
+	 width: 50%;
+}
+.user_ctrl > div > div img{
+	 width: 100%;
+	 height: auto;
+}
+
+.user_other {
+	
+}

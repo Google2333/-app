@@ -1,0 +1,161 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem; background: #f4f4f4;}
+header {
+	height: 0.9rem;
+	background: #f7f7f7;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+	color: #666;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+
+
+.message img {
+	width: 25%;
+}
+header .sys img {
+	width: 35%;
+	height: auto;
+}
+
+.preLogin {
+	line-height: 0.8rem;
+	background: #fff;
+	border-top: 0.02rem solid #ddd;
+	border-bottom: 0.02rem solid #ddd;
+	font-size: 0.3rem;
+	padding-left: 0.3rem;
+}
+
+main {
+	background: #fff;
+	border-top: 0.02rem solid #ddd;
+	border-bottom: 0.02rem solid #ddd;
+	padding:0 0.3rem;
+	margin-top: 0.34rem;
+}
+main h2{
+	line-height: 0.8rem;
+	border-bottom: 0.02rem solid #ddd;
+	font-weight: normal;
+	font-size: 0.3rem;
+}
+
+.shop_content > div {
+	display: flex;
+	padding: 0.3rem 0;
+	border-bottom: 0.02rem solid #ddd;
+}
+
+.shop_content > div input {
+	flex: 6;
+}
+.shop_content .shop_photo {
+	flex: 16;
+	margin-left: 0.1rem;
+	margin-right: 0.3rem;
+}
+.shop_content .shop_photo img{
+	width: 100%;
+	height: auto;
+	border: 0.02rem solid #ddd;
+}
+
+.shop_content .shop_info {
+	flex: 46;
+}
+
+.shop_info h3 {
+	font-size: 0.32rem;
+	font-weight: normal;
+	width: 100%;
+}
+
+.shop_info > div {
+	display: flex;
+	margin-top: 0.16rem;
+	justify-content: space-between;
+}
+
+.count {
+	 display: flex;
+	width: 1.8rem;
+	margin-right: 0.2rem;
+	height: 0.5rem;
+}
+.count button { width: 33.3333%;}
+.count input { width: 33.3333%; 
+text-align: center;}
+
+.shop_price {
+	width: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.shop_price em{
+	font-style: normal;
+	color: #f33;
+	text-align: right;
+	font-size: 0.36rem;
+}
+
+footer {
+	height: 1.28rem;
+	border-top: 0.02rem solid #ddd;
+	margin-top: 0.34rem;
+	background: #fff;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0 0.3rem;
+	display: flex;
+	align-items: center;
+}
+
+footer > input {
+	width: 0.5rem;
+}
+footer > div {
+	flex: 1;
+	margin-left: 0.2rem;
+}
+footer > div p{
+	font-size: 0.3rem;
+}
+footer > div em{
+	font-size: 0.4rem;
+	font-style: normal;
+	color: #f33;
+}
+footer > div span{
+	font-size: 0.24rem;
+	color:#999;
+}
+
+footer > button {
+	width: 2.3rem;
+	border: none;
+	background: #f33;
+	color: #fff;
+	border-radius: 5px;
+	height: 80%;
+	
+}

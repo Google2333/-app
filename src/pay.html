@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<h2>付款</h2>
+			<p>金额：{{total}}</p>
+			<button @click="jumpUser">立即支付</button>
+		</div>
+		
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					total:sessionStorage.getItem("total")
+				},
+				methods:{
+					jumpUser(){
+						location = "user.html"
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>

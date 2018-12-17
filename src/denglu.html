@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message"><img src="pic_list/pic_list_back.jpg"/></div>
+			<div class="search"><h2>会员登录</h2></div>
+			<div class="sys"><span>注册</span></div>
+		</header>
+		<div id="box">
+		<div class="zhanghao">
+			<div class="zh_tupian">
+				<img src="denglu/images/denglu_03.png"/>
+				<span>账号</span>
+			</div>
+			<div class="shuru">
+				<input type="text" v-model="obj.phone" />
+			</div>
+		</div>
+		<div class="zhanghao mima">
+			<div class="zh_tupian">
+				<img src="denglu/images/denglu_07.png"/>
+				<span>密码</span>
+			</div>
+			<div class="shuru">
+				<input type="text" v-model="obj.pwd" />
+			</div>
+		</div>
+		
+		<div class="bg">
+			<div class="denglu">
+				<button @click="submit()">登录</button>
+			</div>
+			<div class="m_z">
+				<a href="reg.html" class="mf" style="font-size: 20px;">免费注册</a>
+				<a href="#" class="zh">找回密码</a>
+			</div>
+			<div class="hz">
+				<div class="hz_s">
+					<span>合作伙伴登录</span>
+				</div>
+			</div>
+			<div class="wqw">
+				<div class="weibo">
+					<img src="denglu/images/denglu_11.png"/>
+					<span>微博</span>
+				</div>
+				<div class="qq">
+					<img src="denglu/images/denglu_13.png"/>
+					<span>QQ</span>
+				</div>
+				<div class="wechat">
+					<img src="denglu/images/denglu_15.png"/>
+					<span>微信</span>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{
+						phone:"",
+						pwd:""
+					}
+				},
+				methods:{
+					submit(){
+						axios.post("/login",this.obj).then((res)=>{
+							console.log(res);
+							if(res.data == true){
+								//先把登录状态存起来
+								//localStorage.setItem("phone",this.obj.phone);
+								//sessionStorage 也是一个本地数据库
+								//sessionStorage.setItem() 设置一条数据
+								//sessionStorage.getItem() 获取一条数据
+								//sessionStorage.removeItem()  删除一条数据
+								//localStorage和sessionStorage区别
+								//localStorage里的数据只要不清理浏览器，会一直存在
+								//sessionStorage里的数据只要浏览器关闭就会清除
+								
+								sessionStorage.setItem("phone",this.obj.phone);
+								
+								location = localStorage.getItem("loginJump");
+							}else{
+								alert(res.data)
+							}
+						})
+					}
+					
+				}
+			})
+		</script>
+	</body>
+</html>

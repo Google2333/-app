@@ -1,0 +1,86 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body {
+	font-size: 0.32rem;
+	background: #f4f4f4;
+}
+ul { list-style: none;}
+header { height: 0.9rem; 
+	  background: #f7f7f7;
+      display: flex;
+      border-bottom: 0.02rem solid #ddd;
+}
+
+.message {
+	 width: 1rem;
+}
+.sys {
+	 width: 1rem;
+	 color: #666;
+}
+.search {
+	flex: 1;
+	color: #555;
+}
+
+
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header > div img {
+	width: 38%;
+	height: auto;
+}
+
+.formItem {
+	border-bottom: 0.02rem solid #ddd;
+	height: 1.1rem;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	padding: 0 0.3rem;
+}
+.formItem span {
+	width: 1.46rem;
+}
+.formItem input {
+	border: none;
+/*	outline: none;*/
+	display: inline-block;
+	line-height: 0.6rem;
+	color: #999;
+}
+
+.yanzheng input{
+    width: 3rem;	
+    margin-right: 0.4rem;
+}
+
+.yanzheng button {
+	background: none;
+	border: #f33 solid 0.02rem;
+	color: #f33;
+	padding: 4px;
+	border-radius: 5px;
+}
+
+.xieyi {
+	height: 0.9rem;
+	display: flex;
+	align-items: center;
+	margin-left: 0.3rem;
+	color: #555;
+}
+.btn {
+	margin-top: 0.16rem;
+	text-align: center;
+}
+.btn input {
+	width: 90%;
+	height: 0.96rem;
+	color: #fff;
+	border-radius: 5px;
+	background: #64676e;
+	border: none;
+}

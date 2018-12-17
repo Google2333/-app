@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message"><img src="images/list/pic_list_back.jpg"/></div>
+			<div class="search">
+				商品详情
+			</div>
+			<div class="sys">
+				<a href="shopcar.html">
+					<img src="images/list/pic_list_list.jpg"/>
+				</a>
+			</div>
+		</header>
+		
+		<div id="box">
+	<!--	<div v-if="isShow">暂时没有找到你需要的商品~</div>-->
+		<div>
+		<main>
+			<div class="banner">
+				<img :src="obj.img"/>
+			</div>
+			<div class="title">
+				<p>{{obj.title}}</p>
+				<em>￥{{obj.price}}.00 <s>￥5899.00 </s> <span>手机专享</span></em>
+			</div>
+			<div class="sale">
+				<span>满减</span>
+				<p>满5000元，最高直减2000元</p>
+			</div>
+			<div class="checked">
+				<span class="s_title">已选</span>
+				<p>金色 全网通版16G</p>
+			</div>
+			<div class="other">
+				<div class="count">
+					<span class="s_title">数量</span>
+					<div>
+						<button @click="jian()">-</button>
+						<input type="number" v-model="num" min="1" />
+						<button @click="jia()">+</button>
+					</div>
+					<p>库存{{obj.count}}件</p>
+				</div>
+				<div class="count services">
+					<span class="s_title">服务</span>
+					<p>由孝感逸购电商平台发货并提供售后服务</p>
+				</div>
+			</div>
+		</main>
+		
+		<div class="msg">
+			<h2>
+				商品评论 <span>(5643评论)好评度94%</span>
+			</h2>
+			<div class="msg_content">q
+				
+				<div v-for="item in obj.info">
+					<div class="msg_user">
+						<div>{{item.name}}</div>
+						<div>
+							<em>好评</em>
+							<span>{{item.time}}</span>
+						</div>
+					</div>
+					<p>{{item.msg}}</p>
+					<div class="msg_pic">
+						<ul>
+							
+							<li v-for="pic in item.pic">
+								<img :src="pic" />
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			<div class="more">查看更多评论</div>
+		</div>
+		
+		<footer>
+			<div class="collect">收藏</div>
+			<div class="btn">
+				<button @click="addCar()">加入购物车</button>
+			</div>
+			<div class="buy">
+				立即购买
+			</div>
+		</footer>
+		</div>
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{},
+					num:1
+				},
+				created(){
+					var id = location.search.split("=")[1];
+					//发请求，请求数据，请求 对应id= 203 的数据
+					axios.get("/detail/"+id).then((res)=>{
+						console.log(res)
+						this.obj = res.data;
+					})
+				},
+				methods:{
+					jia(){
+						//alert(12)
+						if(this.num < this.obj.count){
+							this.num++
+						}
+					},
+					jian(){
+						if(this.num > 1){
+							this.num--
+						}
+					},
+					addCar(){
+						var data = {
+							id:this.obj.id,
+							img:this.obj.img,
+							title:this.obj.title,
+							price:this.obj.price,
+							category:this.obj.category,
+							num:this.num,
+							selected:true
+						}
+						
+						//如果现在没买一件商品，那么 本地数据库中就不会有 我们存的数据
+						//当买第一件时，我们要建一个空数组，用来装现在要存的这一条数据
+						//买第二件时，要把  本地数据库中 已有的这个组数，要拿出来，在这个数组上Push增加一条数据
+						//console.log(localStorage.getItem("shopCar")) //null
+						if(localStorage.getItem("shopCar")){
+							//这个shopCar的这个数组是存在的
+							var res = JSON.parse(localStorage.getItem("shopCar"));
+							//判断 当前要加入购物车的商品，在购物车中是不是已经有了
+							//如果有，就只加数量，如果没有，要新增一条数据
+							var bool = true;
+							for(var i=0;i<res.length;i++){
+								if(res[i].id == data.id){
+									res[i].num+=data.num;
+									bool = false;
+								}
+							}
+							
+							if(bool){
+								res.push(data);
+							}
+							
+							localStorage.setItem("shopCar",JSON.stringify(res))
+							
+						}else{
+							//现在shopCar不存在的，也就是说，一条数据还没有
+							var ary = [data];
+							localStorage.setItem("shopCar",JSON.stringify(ary))
+						}
+						alert("已经加入到购物车")
+					}
+				}
+			})
+			
+//			当我们点了"加入购物车"按钮
+//			要把数据传给 购物车页面
+//			1.要传什么数据( 购物车页面要什么数据,我们就传什么数据)
+//			   要 商品的图片
+//			       标题
+//			      价格
+//			       买的数量
+//			       分类名
+//			       id
+//			 2.整理好的数据,如何发到 购物车页面
+//			    方法1:使用url地址上的查询字符串来传递
+//			    方法2:先把数据,发给服务器,让服器存起来,到了 购物车页面
+//			    再把这个数据请求回来
+//			  方法3:  先把数据存到 浏览器的本地数据库中,到了 购物车页面
+//			    再把这个数据从 本地数据库中拿出来
+//			   localStorage.setItem()
+//			    localStorage.getItem()
+//            localStorage本地数据库只能存字符串
+   //          我就是想存在一个对象， 可以把对象先转成（json）字符串，再存到本地数据库
+		</script>
+	</body>
+</html>

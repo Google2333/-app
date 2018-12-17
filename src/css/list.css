@@ -1,0 +1,128 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header {
+	height: 0.9rem;
+	background: #f7f7f7;
+	display: flex;
+}
+
+.message,.sys {
+	width: 1.1rem;
+}
+.search {
+	flex: 1;
+}
+header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header img {
+	width: 48%;
+	height: auto;
+}
+
+.search input {
+	width: 95%;
+	height: 0.66rem;
+	background: #fff url(../images/list/pic_list_search.jpg) no-repeat 94% center;
+	background-size:0.4rem;
+	border: 1px solid #d8d0ce;
+	border-radius: 5px;
+	color: #b3a7a9;
+	padding-left: 12px;
+	font-size: 0.3rem;
+}
+
+.message img {
+	width: 25%;
+}
+header .sys img {
+	width: 35%;
+	height: auto;
+}
+
+.btns {
+	display: flex;
+	height: 0.86rem;
+	justify-content: space-around;
+	align-items: center;
+	border-top: 0.02rem solid #d8d0ce;
+	border-bottom: 0.02rem solid #d8d0ce;
+}
+
+.btns a {
+	color: #555;
+	text-decoration: none;
+}
+.btns .active {color: #f33;}
+/*:before :after*/
+.icon {
+	position: relative;
+}
+.icon:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 4px solid #555;
+	border-left: 4px solid #fff;
+	border-right: 4px solid #fff;
+	border-bottom: 4px solid #fff;
+	position: absolute;
+	right: -12px;
+	top: 50%;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0.22rem;
+	justify-content: space-between;
+}
+
+main > div {
+	width: 48.5%;
+	padding-bottom: 0.3rem;
+}
+
+main > div > div {
+	height: 3.45rem;
+	border: 0.02rem solid #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main a {
+	 display: block; width: 100%; height: 100%;
+	 display: flex; justify-content: center;
+	align-items: center;
+}
+main > div > div a > img {
+	height: 75%;
+	width: auto;
+}
+
+main > div > p {
+	margin: 5px 0;
+}
+
+main > div > em {
+	margin: 5px 0;
+	font-style: normal;
+	color: #f33;
+}
+main > div > em span{
+	border: 0.02rem solid #f33;
+	padding:0 2px;
+	font-size: 0.24rem;
+	vertical-align: calc(2px);
+	margin-left: 5px;
+}
+main > div > span {
+	font-size: 0.26rem;
+	color: #888;
+	margin: 5px 0;
+	display: block;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/category.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/category/g_back.jpg"/></div>
+			<div class="search">
+				<input type="text" value="请输入商品、商家、服务" />
+			</div>
+			<div class="sys"><img src="images/category/g_message.jpg"/></div>
+		</header>
+		
+		<main>
+			<aside>
+				<a href="#" class="active">电子数码</a>
+				<a href="#">家用电器</a>
+				<a href="#">箱包鞋帽</a>
+				<a href="#">日用百货</a>
+			</aside>
+			<article>
+				<div class="add"><img src="images/category/g_banner.jpg"/></div>
+				<div class="phone">
+					<h2>手机通讯</h2>
+					<div class="phone_content">
+						
+						<div v-for="item in result">
+							<div>
+								<a v-bind="{href:'list.html?keyword='+item.title}" >
+									<img :src="item.img" />
+								</a>
+								<p>{{item.title}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="parts">
+					<h2>数码配件</h2>
+					<div class="phone_content parts_content">
+						<div><div><img src="images/category/g_list22.jpg"/><p>苹果</p></div></div>
+						<div><div><img src="images/category/g_list23.jpg"/><p>苹果</p></div></div>
+						<div><div><img src="images/category/g_list24.jpg"/><p>苹果</p></div></div>
+					</div>
+				</div>
+			</article>
+		</main>
+		
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:".phone",
+			data:{
+				result:[]
+			},
+			created(){
+				//当vue实例对象初始化完成时，就立即执行
+				axios.get("/category").then((res)=>{
+					console.log(res);
+					this.result = res.data;
+				})
+			}
+		})
+	</script>
+	
+	</body>
+</html>

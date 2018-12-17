@@ -1,0 +1,191 @@
+* { margin: 0; padding: 0;}
+
+body {font-size: 0.32rem}
+
+header { 
+	display:flex;
+ 	background: #f7f7f7;; height: 0.9rem;
+ }
+
+.message {
+	width: 1rem;
+}
+
+.search {
+	flex: 1;
+	/*flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 0%;*/
+}
+
+.search h2 {
+	color: #8C8C8C;
+	font-weight: normal;
+	font-size: 0.32rem;
+}
+
+.sys {
+	width: 1rem;
+}
+
+.sys span {
+	color: #CCCCCC;
+}
+
+header > div { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header > div img {
+	width: 34%;
+	height: auto;
+}
+
+.zhanghao {
+	display: flex;
+	height: 1.14rem;
+	border-bottom: 0.01rem solid #C0C0C0;
+	border-top: 0.01rem solid #C0C0C0;
+	align-items: center;
+}
+
+.zhanghao > div {
+	display: flex;
+}
+
+.zh_tupian {
+	height: 0.35rem;
+	align-items: center;
+	padding-left: 0.3rem;
+}
+
+.zh_tupian img {
+	width: auto;
+	height: 100%;
+}
+
+.zh_tupian span {
+	padding-left: 0.3rem;
+	color: #262626;
+}
+
+.shuru {
+	padding-left: 0.5rem;
+}
+
+.shuru input {
+	height: 1rem;
+	width: 5.3rem;
+	color: #CCCCCC;
+	font-size: 0.32rem;
+	border: none;
+}
+
+.mima {
+	border-top:none;
+}
+
+
+.bg {
+	height: 9.72rem;
+	background: #f4f4f4;
+}
+
+.denglu {
+	display: flex;
+	justify-content: center;
+}
+
+.denglu button {
+	background: #ff3030;
+	border: none;
+	width: 6.9rem;
+	height: 0.96rem;
+	border-radius: 0.05rem;
+	margin-top: 0.5rem;
+	color: white;
+	font-size: 0.32rem;
+}
+
+.m_z {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.36rem;
+}
+
+.m_z a {
+	text-decoration: none;
+	font-size: 0.2rem;
+	padding: 0 0.3rem;
+}
+
+.mf {
+	color: #fe603d;
+}
+
+.zh {
+	color: #b3a7a9;
+}
+
+.hz {
+	display: flex;
+	justify-content: center;
+}
+
+.hz_s {
+	display: flex;
+	width: 90%;
+	border-bottom: 0.01rem dashed #c8c8c8;
+	margin-top: 4.5rem;
+	padding-bottom: 0.2rem;
+	justify-content: center;
+}
+
+.hz_s span {
+	color: 071b26;
+}
+
+.wqw {
+	display: flex;
+	height: 2.46rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wqw > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wqw img {
+	width: 50%;
+	height: auto;
+}
+
+.wechat {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.qq {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.weibo {
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.wqw span {
+	width: 100%;
+	text-align: center;
+	color: #66666e;
+	padding-top: 0.15rem;
+}
+
